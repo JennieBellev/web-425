@@ -1,14 +1,9 @@
-<header>
-  <h1>RPG Character Builder</h1>
-  <nav>
-    <a routerLink="/">Home</a>
-  </nav>
-</header>
+<nav>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a> |
+  <a routerLink="/classes" routerLinkActive="active">Classes</a> |
+  <a routerLink="/about" routerLinkActive="active">About</a>
+</nav>
 
 <main>
   <router-outlet></router-outlet>
 </main>
-
-<footer>
-  <p>WEB 425 · RPG Character Builder</p>
-</footer>
