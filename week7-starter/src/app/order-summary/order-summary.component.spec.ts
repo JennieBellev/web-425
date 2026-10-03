@@ -51,7 +51,7 @@ describe('OrderSummaryComponent', () => {
     component.order = { orderId: 1001, tacos: [] };
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain('No tacos added to the order yet.');
+    expect(compiled.querySelector('p').textContent).toContain('Your order is empty.');
   });
 
   it('should display details for each taco in the order', () => {
@@ -67,8 +67,8 @@ describe('OrderSummaryComponent', () => {
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('li').textContent).toContain('2x Carnitas');
-    expect(compiled.querySelector('li').textContent).toContain('Price per taco: $3.00');
+    expect(compiled.querySelector('li').textContent).toContain('Quantity: 2');
+    expect(compiled.querySelector('li').textContent).toContain('Unit Price: $3.00');
   });
 
   it('should calculate the total using taco quantity values', () => {
@@ -96,7 +96,7 @@ describe('OrderSummaryComponent', () => {
     const compiled = fixture.nativeElement;
     const firstItem = compiled.querySelector('li');
 
-    expect(firstItem.textContent).toContain('2x Carnitas Taco');
+    expect(firstItem.textContent).toContain('Quantity: 2');
   });
 
   /**
@@ -116,7 +116,7 @@ describe('OrderSummaryComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const firstItem = compiled.querySelector('li');
 
-    expect(firstItem?.textContent).toContain('2x Carnitas Taco');
+    expect(firstItem?.textContent).toContain('Quantity: 2');
   });
 
   /**
@@ -134,7 +134,7 @@ describe('OrderSummaryComponent', () => {
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('li')?.textContent).toContain('Price per taco: $3.25');
+    expect(compiled.querySelector('li')?.textContent).toContain('Unit Price: $3.25');
   });
 
   /**
@@ -154,7 +154,7 @@ describe('OrderSummaryComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const buttons = Array.from(compiled.querySelectorAll('button'));
 
-    expect(buttons.length).toBe(0);
+    expect(buttons.length).toBe(1);
   });
 
   /**

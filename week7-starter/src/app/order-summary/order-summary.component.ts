@@ -14,7 +14,7 @@ import { Order } from '../order/order.component';
           <li>
             <div class="w4-item-heading">
               <!-- Replaced quantity-first with generated Item identifier -->
-              <strong>Item {{ $index + 1 }}: {{ taco.name }}</strong>
+              <strong>{{ taco.name }}</strong>
             </div>
             <div class="w4-detail-list">
               <p>Quantity: {{ taco.quantity }}</p>
